@@ -1,0 +1,2 @@
+Place your actual resume PDF here as "resume.pdf" (same folder).
+The site's Résumé buttons link to /resume.pdf.
