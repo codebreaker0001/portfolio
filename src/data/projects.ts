@@ -103,4 +103,33 @@ export const projects: Project[] = [
       "Result-shaping tools (run_query as markdown, export_csv, explain_query, get_table_stats) keep outputs compact for LLM context.",
     ],
   },
+  {
+    id: "multi-agent-bank-chatbot",
+    title: "Multi-Agent Banking Chatbot",
+    shortDescription: "A coordinator-and-specialist agent system for banking queries, with PII masking and confirm-before-write database changes.",
+    category: "Multi-Agent Systems",
+    technologies: ["Python", "FastAPI", "PostgreSQL", "Redis", "Groq (LLaMA 3.1)", "React"],
+    githubUrl: "https://github.com/codebreaker0001/multi-agent-bank-chatbot",
+    featured: false,
+
+    problem:
+      "A banking assistant that sends raw customer data to an LLM leaks PII, and one that writes to the database without confirmation can silently move money.",
+    solution:
+      "A coordinator LLM classifies each user's intent and routes it to a specialist agent (account, transaction, service), with PII masked before any text reaches the model.",
+    architecture: [
+      "User",
+      "PII Masking",
+      "Coordinator (Intent Classifier)",
+      "Account / Transaction / Service Agents",
+      "Scoped DB Access",
+      "Confirm-Before-Write",
+    ],
+    engineeringHighlights: [
+      "PII masking pipeline replaces account numbers, PAN, Aadhaar, phone, and email with tokens before any data reaches the LLM.",
+      "Coordinator → specialist agent pattern, so new agents can be added without touching the router.",
+      "JWT auth with bcrypt hashing, access and refresh tokens, and Redis-backed rate limiting (20 req/min per user).",
+      "Confirm-before-write pattern for every database mutation.",
+      "Per-agent latency, call-count, and process CPU/memory observability endpoint.",
+    ],
+  },
 ]

@@ -17,7 +17,7 @@ export const profile = {
   bioParagraphs: [
     "I'm an AI Engineer with a B.Tech from IIT Roorkee, currently building GenAI-powered systems that go past the notebook and into production — event-driven serverless APIs, multi-tenant RAG platforms, and multi-agent research pipelines with real evaluation harnesses behind them.",
     "My work sits at the intersection of LLM engineering and backend systems design: prompt orchestration and retrieval on one side, tenant isolation, caching, rate limiting, and observability on the other. I care less about wiring a model into an app and more about what happens when that app has real users, real load, and real failure modes.",
-    "Outside of AI infra, I've spent years on core CS fundamentals — 500+ algorithmic problems across Codeforces, CodeChef, and LeetCode — which is less a resume line and more the habit that shapes how I approach system design.",
+    "Outside of AI infra, I've spent years on core CS fundamentals — 700+ algorithmic problems across Codeforces, CodeChef, and LeetCode — which is less a resume line and more the habit that shapes how I approach system design.",
   ],
 
   interests: [
@@ -30,7 +30,7 @@ export const profile = {
   stats: [
     { label: "Production uptime", value: "99.9%", note: "Azure serverless lesson-generation APIs" },
     { label: "Source-grounding accuracy", value: "80%", note: "Multi-agent research pipeline eval harness" },
-    { label: "DSA problems solved", value: "500+", note: "Codeforces · CodeChef · LeetCode" },
+    { label: "DSA problems solved", value: "700+", note: "Codeforces · CodeChef · LeetCode" },
     { label: "JEE Advanced 2022", value: "AIR 9162", note: "Among 1.6 lakh+ qualified candidates" },
   ],
 } as const
