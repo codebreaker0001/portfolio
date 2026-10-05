@@ -76,4 +76,31 @@ export const projects: Project[] = [
     ],
     results: [{ label: "Source-grounding accuracy", value: "80%" }],
   },
+  {
+    id: "db-explorer",
+    title: "DB Explorer (MCP Server)",
+    shortDescription: "A read-only MCP server that lets Claude inspect schemas, run SELECT queries, and map relationships across SQLite, PostgreSQL, and MySQL.",
+    category: "MCP Tooling",
+    technologies: ["Python", "MCP", "SQLAlchemy", "SQLite", "PostgreSQL", "MySQL"],
+    githubUrl: "https://github.com/codebreaker0001/db-explorer",
+    featured: false,
+
+    problem:
+      "Giving an LLM access to a production database is risky: it needs enough schema context to write useful queries, but any write access turns a helpful assistant into a liability.",
+    solution:
+      "An MCP server that exposes schema inspection and query tools to Claude, with every query validated to SELECT-only before it reaches the database.",
+    architecture: [
+      "Claude (MCP Client)",
+      "MCP Tool Layer",
+      "SELECT-only Validator",
+      "Async SQLAlchemy Connection",
+      "SQLite / PostgreSQL / MySQL",
+    ],
+    engineeringHighlights: [
+      "Write-blocking at the query layer: non-SELECT SQL is rejected before execution, keeping the server read-only by design.",
+      "Schema tools (list_tables, describe_table, get_indexes, get_relationships, generate_erd) give the model enough structure to write correct joins without guessing.",
+      "Async SQLAlchemy with pool_pre_ping across three dialects, with optional drivers (asyncpg, aiomysql) loaded only when needed.",
+      "Result-shaping tools (run_query as markdown, export_csv, explain_query, get_table_stats) keep outputs compact for LLM context.",
+    ],
+  },
 ]
