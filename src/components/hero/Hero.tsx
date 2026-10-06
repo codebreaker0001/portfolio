@@ -76,12 +76,12 @@ export function Hero() {
       </Container>
 
       <motion.button
-        onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+        onClick={() => document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" })}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
         className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-paper-faint transition-colors hover:text-signal"
-        aria-label="Scroll to About section"
+        aria-label="Scroll to Experience section"
       >
         <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Scroll</span>
         <motion.span

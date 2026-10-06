@@ -10,9 +10,9 @@ export function Projects() {
         <SectionHeading
           index="03"
           title="Selected work."
-          description="Two production-style systems — a multi-tenant RAG platform and a self-critiquing multi-agent research pipeline."
+          description="Production-style AI systems, built end to end."
         />
-        <div>
+        <div className="grid gap-6 md:grid-cols-2">
           {projects.map((project, i) => (
             <ProjectCase key={project.id} project={project} index={i} />
           ))}
