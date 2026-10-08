@@ -59,6 +59,7 @@ export const projects: Project[] = [
     category: "Multi-Agent Systems",
     technologies: ["Python", "LangGraph", "FastAPI", "Groq", "Tavily"],
     githubUrl: "https://github.com/codebreaker0001/multi_agent_research_pipeline",
+    liveUrl: "https://multi-agent-research-pipeline-1.onrender.com/",
     featured: true,
     highlights: [
       "Critic loop is bounded; 80% source-grounding accuracy in the eval harness.",
