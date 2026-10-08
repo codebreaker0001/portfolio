@@ -46,6 +46,7 @@ export const projects: Project[] = [
     category: "Retrieval-Augmented Generation",
     technologies: ["Python", "FastAPI", "PostgreSQL", "pgvector", "Redis"],
     githubUrl: "https://github.com/codebreaker0001/doc_query",
+    liveUrl: "https://doc-query-2.onrender.com/",
     featured: true,
     highlights: [
       "PostgreSQL Row-Level Security isolates each tenant's documents and embeddings.",
